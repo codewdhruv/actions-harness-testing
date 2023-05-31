@@ -33,4 +33,4 @@ pipeline:
                   spec:
                     uses: kamilkisiela/graphql-inspector@v3.4.0
                     with:
-                      schema: "\"main:schema.graphql\""
+                      schema: main:schema.graphql
