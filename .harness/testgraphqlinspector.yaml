@@ -1,0 +1,36 @@
+pipeline:
+  name: test-graphql-inspector
+  identifier: testgraphqlinspector
+  projectIdentifier: NgLabs
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: gitconnectordhruba
+        repoName: actions-harness-testing
+        build: <+input>
+  stages:
+    - stage:
+        name: linuxamd64
+        identifier: linuxamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Action_1
+                  identifier: Action_1
+                  spec:
+                    uses: kamilkisiela/graphql-inspector@v3.4.0
+                    with:
+                      schema: "\"main:schema.graphql\""
