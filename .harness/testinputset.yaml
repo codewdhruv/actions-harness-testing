@@ -1,0 +1,15 @@
+inputSet:
+  name: test-inputset
+  identifier: testinputset
+  orgIdentifier: default
+  projectIdentifier: NgLabs
+  pipeline:
+    identifier: testgraphqlinspector
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
+  object Object: pipeline.properties.ci.codebase
