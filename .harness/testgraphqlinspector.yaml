@@ -28,6 +28,12 @@ pipeline:
             steps:
               - step:
                   type: Action
+                  name: Simple test
+                  identifier: Simple_test
+                  spec:
+                    uses: stelligent/cfn_nag@master
+              - step:
+                  type: Action
                   name: Typos
                   identifier: Typos
                   spec:
