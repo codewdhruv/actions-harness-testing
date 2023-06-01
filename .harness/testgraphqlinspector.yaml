@@ -31,9 +31,7 @@ pipeline:
                   name: Typos
                   identifier: Typos
                   spec:
-                    uses: crate-ci/typos@master
-                    with:
-                      files: test.txt
+                    uses: crate-ci/typos@v1.0.4
                   when:
                     stageStatus: All
                   failureStrategies: []
