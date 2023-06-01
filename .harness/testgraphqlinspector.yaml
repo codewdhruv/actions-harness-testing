@@ -46,3 +46,14 @@ pipeline:
                   when:
                     stageStatus: All
                   failureStrategies: []
+              - step:
+                  type: Action
+                  name: Codecov
+                  identifier: Codecov
+                  spec:
+                    uses: codecov/codecov-action@v3
+                    env:
+                      CODECOV_TOKEN: 3e069b00-b042-43cc-807f-77fd4b5619b6
+                  when:
+                    stageStatus: All
+                  failureStrategies: []
