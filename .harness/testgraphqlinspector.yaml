@@ -28,9 +28,18 @@ pipeline:
             steps:
               - step:
                   type: Action
-                  name: Action_1
+                  name: Graphql Inspector
                   identifier: Action_1
                   spec:
                     uses: kamilkisiela/graphql-inspector@v3.4.0
                     with:
                       schema: main:schema.graphql
+              - step:
+                  type: Action
+                  name: MegaLinter
+                  identifier: MegaLinter
+                  spec:
+                    uses: oxsecurity/megalinter/flavors/javascript@beta
+                    env:
+                      VALIDATE_ALL_CODEBASE: "true"
+                      GITHUB_TOKEN: <+secrets.getValue("junepat")>
