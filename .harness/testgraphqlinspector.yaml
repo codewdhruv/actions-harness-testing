@@ -28,6 +28,17 @@ pipeline:
             steps:
               - step:
                   type: Action
+                  name: Typos
+                  identifier: Typos
+                  spec:
+                    uses: crate-ci/typos@master
+                    with:
+                      files: test.txt
+                  when:
+                    stageStatus: All
+                  failureStrategies: []
+              - step:
+                  type: Action
                   name: Graphql Inspector
                   identifier: Action_1
                   spec:
@@ -54,17 +65,6 @@ pipeline:
                     uses: codecov/codecov-action@v3
                     env:
                       CODECOV_TOKEN: 3e069b00-b042-43cc-807f-77fd4b5619b6
-                  when:
-                    stageStatus: All
-                  failureStrategies: []
-              - step:
-                  type: Action
-                  name: Typos
-                  identifier: Typos
-                  spec:
-                    uses: crate-ci/typos@master
-                    with:
-                      files: ./test.txt
                   when:
                     stageStatus: All
                   failureStrategies: []
