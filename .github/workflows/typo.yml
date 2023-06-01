@@ -1,5 +1,5 @@
 name: Test GitHub Action
-on: [pull_request]
+on: [push]
 
 jobs:
   run:
