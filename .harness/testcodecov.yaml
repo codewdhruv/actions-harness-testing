@@ -45,7 +45,7 @@ pipeline:
           cloneCodebase: true
           platform:
             os: Linux
-            arch: Amd64
+            arch: Arm64
           runtime:
             type: Cloud
             spec: {}
@@ -69,7 +69,7 @@ pipeline:
         spec:
           cloneCodebase: true
           platform:
-            os: Linux
+            os: Windows
             arch: Amd64
           runtime:
             type: Cloud
@@ -94,8 +94,8 @@ pipeline:
         spec:
           cloneCodebase: true
           platform:
-            os: Linux
-            arch: Amd64
+            os: Windows
+            arch: Arm64
           runtime:
             type: Cloud
             spec: {}
