@@ -1,0 +1,113 @@
+pipeline:
+  name: test-codecov
+  identifier: testcodecov
+  projectIdentifier: NgLabs
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: gitconnectordhruba
+        repoName: actions-harness-test
+        build: <+input>
+  stages:
+    - stage:
+        name: linux-amd64
+        identifier: linuxamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: CodeCov
+                  identifier: CodeCov
+                  spec:
+                    uses: codecov/codecov-action@v3
+                    with:
+                      CODECOV_TOKEN: 3e069b00-b042-43cc-807f-77fd4b5619b6
+        when:
+          pipelineStatus: All
+    - stage:
+        name: linux-arm64
+        identifier: linuxarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: CodeCov
+                  identifier: CodeCov
+                  spec:
+                    uses: codecov/codecov-action@v3
+                    with:
+                      CODECOV_TOKEN: 3e069b00-b042-43cc-807f-77fd4b5619b6
+        when:
+          pipelineStatus: All
+    - stage:
+        name: windows-amd64
+        identifier: windowsamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: CodeCov
+                  identifier: CodeCov
+                  spec:
+                    uses: codecov/codecov-action@v3
+                    with:
+                      CODECOV_TOKEN: 3e069b00-b042-43cc-807f-77fd4b5619b6
+        when:
+          pipelineStatus: All
+    - stage:
+        name: windows-arm64
+        identifier: windowsarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: CodeCov
+                  identifier: CodeCov
+                  spec:
+                    uses: codecov/codecov-action@v3
+                    with:
+                      CODECOV_TOKEN: 3e069b00-b042-43cc-807f-77fd4b5619b6
+        when:
+          pipelineStatus: All
