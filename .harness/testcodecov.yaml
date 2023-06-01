@@ -8,7 +8,7 @@ pipeline:
     ci:
       codebase:
         connectorRef: gitconnectordhruba
-        repoName: actions-harness-test
+        repoName: actions-harness-testing
         build: <+input>
   stages:
     - stage:
