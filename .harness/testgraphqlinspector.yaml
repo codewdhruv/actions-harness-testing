@@ -43,3 +43,6 @@ pipeline:
                     env:
                       VALIDATE_ALL_CODEBASE: "true"
                       GITHUB_TOKEN: <+secrets.getValue("junepat")>
+                  when:
+                    stageStatus: All
+                  failureStrategies: []
