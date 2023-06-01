@@ -39,6 +39,15 @@ pipeline:
                   failureStrategies: []
               - step:
                   type: Action
+                  name: Check PHP syntax errors
+                  identifier: Check_PHP_syntax_errors
+                  spec:
+                    uses: overtrue/phplint@6.0.0
+                  when:
+                    stageStatus: All
+                  failureStrategies: []
+              - step:
+                  type: Action
                   name: Graphql Inspector
                   identifier: Action_1
                   spec:
