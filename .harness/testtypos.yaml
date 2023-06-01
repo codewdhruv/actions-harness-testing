@@ -1,0 +1,113 @@
+pipeline:
+  name: test-typos
+  identifier: testtypos
+  projectIdentifier: NgLabs
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: gitconnectordhruba
+        repoName: actions-harness-testing
+        build: <+input>
+  stages:
+    - stage:
+        name: linux-amd64
+        identifier: linuxamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Typo
+                  identifier: Typo
+                  spec:
+                    uses: crate-ci/typos@master
+                    with:
+                      files: ./test.txt
+        when:
+          pipelineStatus: All
+    - stage:
+        name: linux-arm64
+        identifier: linuxarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Typo
+                  identifier: Typo
+                  spec:
+                    uses: crate-ci/typos@master
+                    with:
+                      files: ./test.txt
+        when:
+          pipelineStatus: All
+    - stage:
+        name: windows-amd64
+        identifier: windowsamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Windows
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Typo
+                  identifier: Typo
+                  spec:
+                    uses: crate-ci/typos@master
+                    with:
+                      files: ./test.txt
+        when:
+          pipelineStatus: All
+    - stage:
+        name: windows-arm64
+        identifier: windowsarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Windows
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Typo
+                  identifier: Typo
+                  spec:
+                    uses: crate-ci/typos@master
+                    with:
+                      files: ./test.txt
+        when:
+          pipelineStatus: All
