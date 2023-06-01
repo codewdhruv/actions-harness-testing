@@ -1,5 +1,5 @@
 pipeline:
-  name: test-graphql-inspector
+  name: test-actions
   identifier: testgraphqlinspector
   projectIdentifier: NgLabs
   orgIdentifier: default
