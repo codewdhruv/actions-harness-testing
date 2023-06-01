@@ -1,6 +1,9 @@
 -- Import the Busted testing framework
 local busted = require("busted")
 
+-- Include the main Lua app file
+local app = require("luaapp")
+
 -- Create a test suite
 describe("Lua App", function()
   -- Define a test case
@@ -13,7 +16,7 @@ describe("Lua App", function()
     end
 
     -- Call the function to be tested
-    helloWorld()
+    app.helloWorld()
 
     -- Assert that the expected message is printed
     assert.are.equal("Hello, World!\n", output)
