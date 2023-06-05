@@ -1,0 +1,11 @@
+version: 1
+name: testingv1
+stages:
+  - name: stage
+    type: ci
+    spec:
+      steps:
+        - name: Script
+          spec:
+            run: echo
+          type: script
