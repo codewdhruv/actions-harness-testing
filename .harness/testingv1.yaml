@@ -5,6 +5,12 @@ stages:
     type: ci
     spec:
       steps:
+        - name: APKO
+          spec:
+            with:
+              test: dhw
+            image: overtrue/phplint@6.0.0
+          type: plugin
         - name: Script
           spec:
             run: echo
