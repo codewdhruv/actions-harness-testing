@@ -100,7 +100,7 @@ pipeline:
                   name: Check PHP syntax errors
                   identifier: Check_PHP_syntax_errors
                   spec:
-                    uses: overtrue/phplint@6.0.0
+                    uses: overtrue/phplint@9.0.4
         when:
           pipelineStatus: All
     - stage:
