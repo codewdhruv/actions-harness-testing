@@ -126,3 +126,4 @@ pipeline:
                     uses: overtrue/phplint@6.0.0
         when:
           pipelineStatus: All
+  allowStageExecutions: true
