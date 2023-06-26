@@ -59,6 +59,8 @@ pipeline:
                     with:
                       sourceDir: "'/master/yamls'"
                       targetDir: "'/candidate/yamls'"
+        when:
+          pipelineStatus: All
     - stage:
         name: windows-amd64
         identifier: windowsamd64
@@ -83,6 +85,8 @@ pipeline:
                     with:
                       sourceDir: "'/master/yamls'"
                       targetDir: "'/candidate/yamls'"
+        when:
+          pipelineStatus: All
     - stage:
         name: windows-arm64
         identifier: windowsarm64
@@ -107,6 +111,8 @@ pipeline:
                     with:
                       sourceDir: "'/master/yamls'"
                       targetDir: "'/candidate/yamls'"
+        when:
+          pipelineStatus: All
     - stage:
         name: mac-arm64
         identifier: macarm64
@@ -131,3 +137,5 @@ pipeline:
                     with:
                       sourceDir: "'/master/yamls'"
                       targetDir: "'/candidate/yamls'"
+        when:
+          pipelineStatus: All
