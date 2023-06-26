@@ -37,3 +37,115 @@ pipeline:
                     env:
                       GITHUB_PR_USERNAME: codewdhruv
                       GITHUB_TOKEN: <+secrets.getValue("junepat")>
+    - stage:
+        name: linux-arm64
+        identifier: linuxarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: release-notes-preview
+                  identifier: releasenotespreview
+                  spec:
+                    uses: snyk/release-notes-preview@v1.6.1
+                    with:
+                      releaseBranch: main
+                    env:
+                      GITHUB_PR_USERNAME: codewdhruv
+                      GITHUB_TOKEN: <+secrets.getValue("junepat")>
+        when:
+          pipelineStatus: All
+    - stage:
+        name: windows-amd64
+        identifier: windowsamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Windows
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: release-notes-preview
+                  identifier: releasenotespreview
+                  spec:
+                    uses: snyk/release-notes-preview@v1.6.1
+                    with:
+                      releaseBranch: main
+                    env:
+                      GITHUB_PR_USERNAME: codewdhruv
+                      GITHUB_TOKEN: <+secrets.getValue("junepat")>
+        when:
+          pipelineStatus: All
+    - stage:
+        name: windows-arm64
+        identifier: windowsarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Windows
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: release-notes-preview
+                  identifier: releasenotespreview
+                  spec:
+                    uses: snyk/release-notes-preview@v1.6.1
+                    with:
+                      releaseBranch: main
+                    env:
+                      GITHUB_PR_USERNAME: codewdhruv
+                      GITHUB_TOKEN: <+secrets.getValue("junepat")>
+        when:
+          pipelineStatus: All
+    - stage:
+        name: macos-arm64
+        identifier: macosarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: MacOS
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: release-notes-preview
+                  identifier: releasenotespreview
+                  spec:
+                    uses: snyk/release-notes-preview@v1.6.1
+                    with:
+                      releaseBranch: main
+                    env:
+                      GITHUB_PR_USERNAME: codewdhruv
+                      GITHUB_TOKEN: <+secrets.getValue("junepat")>
+        when:
+          pipelineStatus: All
