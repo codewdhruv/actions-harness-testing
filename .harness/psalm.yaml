@@ -31,7 +31,7 @@ pipeline:
                   name: Psalm
                   identifier: Psalm
                   spec:
-                    uses: docker://ghcr.io/psalm/psalm-github-actions
+                    uses: psalm/psalm-github-actions@1.1.2
         when:
           pipelineStatus: All
     - stage:
@@ -54,7 +54,7 @@ pipeline:
                   name: Psalm
                   identifier: Psalm
                   spec:
-                    uses: docker://ghcr.io/psalm/psalm-github-actions
+                    uses: psalm/psalm-github-actions@1.1.2
         when:
           pipelineStatus: All
     - stage:
@@ -77,7 +77,7 @@ pipeline:
                   name: Psalm
                   identifier: Psalm
                   spec:
-                    uses: docker://ghcr.io/psalm/psalm-github-actions
+                    uses: psalm/psalm-github-actions@1.1.2
         when:
           pipelineStatus: All
     - stage:
@@ -100,7 +100,7 @@ pipeline:
                   name: Psalm
                   identifier: Psalm
                   spec:
-                    uses: docker://ghcr.io/psalm/psalm-github-actions
+                    uses: psalm/psalm-github-actions@1.1.2
         when:
           pipelineStatus: All
     - stage:
@@ -123,6 +123,6 @@ pipeline:
                   name: Psalm
                   identifier: Psalm
                   spec:
-                    uses: docker://ghcr.io/psalm/psalm-github-actions
+                    uses: psalm/psalm-github-actions@1.1.2
         when:
           pipelineStatus: All
