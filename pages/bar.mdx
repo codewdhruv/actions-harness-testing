@@ -1,0 +1,17 @@
+import { Layout } from '../components/Layout';
+import { MDXProvider } from '@mdx-js/react';
+import { h1, p, a } from '../components/MDXComponents'; // Custom MDX components
+
+export default function FooPage() {
+  return (
+    <Layout>
+      <MDXProvider components={{ h1, p, a }}>
+        <article>
+          <h1>Foo Page</h1>
+          <p>This is a demo Next.js MDX page.</p>
+          <p>Check out the <Link href="https://www.hashicorp.com/">HashiCorp</Link> website!</p>
+        </article>
+      </MDXProvider>
+    </Layout>
+  );
+}
