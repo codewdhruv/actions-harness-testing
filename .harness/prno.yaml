@@ -1,0 +1,15 @@
+inputSet:
+  name: prno
+  identifier: prno
+  orgIdentifier: default
+  projectIdentifier: NgLabs
+  pipeline:
+    identifier: testreleasenotessnyk
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
+  object Object: pipeline.properties.ci.codebase
