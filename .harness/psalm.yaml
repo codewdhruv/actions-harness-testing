@@ -32,6 +32,8 @@ pipeline:
                   identifier: Psalm
                   spec:
                     uses: psalm/psalm-github-actions@1.1.2
+                    with:
+                      security_analysis: "true"
         when:
           pipelineStatus: All
     - stage:
@@ -55,6 +57,8 @@ pipeline:
                   identifier: Psalm
                   spec:
                     uses: psalm/psalm-github-actions@1.1.2
+                    with:
+                      security_analysis: "true"
         when:
           pipelineStatus: All
     - stage:
@@ -78,6 +82,8 @@ pipeline:
                   identifier: Psalm
                   spec:
                     uses: psalm/psalm-github-actions@1.1.2
+                    with:
+                      security_analysis: "true"
         when:
           pipelineStatus: All
     - stage:
@@ -101,6 +107,8 @@ pipeline:
                   identifier: Psalm
                   spec:
                     uses: psalm/psalm-github-actions@1.1.2
+                    with:
+                      security_analysis: "true"
         when:
           pipelineStatus: All
     - stage:
@@ -124,5 +132,7 @@ pipeline:
                   identifier: Psalm
                   spec:
                     uses: psalm/psalm-github-actions@1.1.2
+                    with:
+                      security_analysis: "true"
         when:
           pipelineStatus: All
