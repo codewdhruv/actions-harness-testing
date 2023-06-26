@@ -57,6 +57,8 @@ pipeline:
                     uses: getsentry/action-git-diff-suggestions@v1
                     with:
                       message: eslint
+        when:
+          pipelineStatus: All
     - stage:
         name: windows-amd64
         identifier: windowsamd64
@@ -80,6 +82,8 @@ pipeline:
                     uses: getsentry/action-git-diff-suggestions@v1
                     with:
                       message: eslint
+        when:
+          pipelineStatus: All
     - stage:
         name: windows-arm64
         identifier: windowsarm64
@@ -103,6 +107,8 @@ pipeline:
                     uses: getsentry/action-git-diff-suggestions@v1
                     with:
                       message: eslint
+        when:
+          pipelineStatus: All
     - stage:
         name: macos-arm64
         identifier: macosarm64
@@ -126,3 +132,5 @@ pipeline:
                     uses: getsentry/action-git-diff-suggestions@v1
                     with:
                       message: eslint
+        when:
+          pipelineStatus: All
