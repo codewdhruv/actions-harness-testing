@@ -1,0 +1,133 @@
+pipeline:
+  name: test-k8s-security-config
+  identifier: testk8ssecurityconfig
+  projectIdentifier: NgLabs
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: gitconnectordhruba
+        repoName: actions-harness-testing
+        build: <+input>
+  stages:
+    - stage:
+        name: linux-amd64
+        identifier: linuxamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Kubernetes Security Config Watch
+                  identifier: Kubernetes_Security_Config_Watch
+                  spec:
+                    uses: sysdiglabs/k8s-security-configwatch@v1.0.0
+                    with:
+                      sourceDir: "'/master/yamls'"
+                      targetDir: "'/candidate/yamls'"
+    - stage:
+        name: linux-arm64
+        identifier: linuxarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Kubernetes Security Config Watch
+                  identifier: Kubernetes_Security_Config_Watch
+                  spec:
+                    uses: sysdiglabs/k8s-security-configwatch@v1.0.0
+                    with:
+                      sourceDir: "'/master/yamls'"
+                      targetDir: "'/candidate/yamls'"
+    - stage:
+        name: windows-amd64
+        identifier: windowsamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Windows
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Kubernetes Security Config Watch
+                  identifier: Kubernetes_Security_Config_Watch
+                  spec:
+                    uses: sysdiglabs/k8s-security-configwatch@v1.0.0
+                    with:
+                      sourceDir: "'/master/yamls'"
+                      targetDir: "'/candidate/yamls'"
+    - stage:
+        name: windows-arm64
+        identifier: windowsarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Windows
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Kubernetes Security Config Watch
+                  identifier: Kubernetes_Security_Config_Watch
+                  spec:
+                    uses: sysdiglabs/k8s-security-configwatch@v1.0.0
+                    with:
+                      sourceDir: "'/master/yamls'"
+                      targetDir: "'/candidate/yamls'"
+    - stage:
+        name: mac-arm64
+        identifier: macarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: MacOS
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Kubernetes Security Config Watch
+                  identifier: Kubernetes_Security_Config_Watch
+                  spec:
+                    uses: sysdiglabs/k8s-security-configwatch@v1.0.0
+                    with:
+                      sourceDir: "'/master/yamls'"
+                      targetDir: "'/candidate/yamls'"
