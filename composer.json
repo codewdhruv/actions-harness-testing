@@ -1,0 +1,13 @@
+{
+  "name": "dummy/package",
+  "description": "Dummy Composer Package",
+  "require": {
+    "php": "^7.4",
+    "vimeo/psalm": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Dummy\\": "src/"
+    }
+  }
+}
