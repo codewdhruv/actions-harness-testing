@@ -1,0 +1,151 @@
+pipeline:
+  name: test-devcycle
+  identifier: testdevcycle
+  projectIdentifier: NgLabs
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: gitconnectordhruba
+        repoName: actions-harness-testing
+        build: <+input>
+  stages:
+    - stage:
+        name: linux-amd64
+        identifier: linuxamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Fetch DevCycle Code Usages
+                  identifier: Fetch_DevCycle_Code_Usages
+                  spec:
+                    uses: DevCycleHQ/feature-flag-code-usage-action@1.0.7
+                    with:
+                      github-token: <+secrets.getValue("junepat")>
+                      client-id: oUPcvpyyux9oTber4nYQjtpccVtD1WvS
+                      client-secret: 6_eZqMce5gXTTLXy_ohSpna-Zdsyv_2ozUmSrQwDrGfNGBhmho9myDJTSjwS__3b
+                      project-key: my-first-project
+    - stage:
+        name: linux-arm64
+        identifier: linuxarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Fetch DevCycle Code Usages
+                  identifier: Fetch_DevCycle_Code_Usages
+                  spec:
+                    uses: DevCycleHQ/feature-flag-code-usage-action@1.0.7
+                    with:
+                      github-token: <+secrets.getValue("junepat")>
+                      client-id: oUPcvpyyux9oTber4nYQjtpccVtD1WvS
+                      client-secret: 6_eZqMce5gXTTLXy_ohSpna-Zdsyv_2ozUmSrQwDrGfNGBhmho9myDJTSjwS__3b
+                      project-key: my-first-project
+        when:
+          pipelineStatus: All
+    - stage:
+        name: windows-amd64
+        identifier: windowsamd64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Windows
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Fetch DevCycle Code Usages
+                  identifier: Fetch_DevCycle_Code_Usages
+                  spec:
+                    uses: DevCycleHQ/feature-flag-code-usage-action@1.0.7
+                    with:
+                      github-token: <+secrets.getValue("junepat")>
+                      client-id: oUPcvpyyux9oTber4nYQjtpccVtD1WvS
+                      client-secret: 6_eZqMce5gXTTLXy_ohSpna-Zdsyv_2ozUmSrQwDrGfNGBhmho9myDJTSjwS__3b
+                      project-key: my-first-project
+        when:
+          pipelineStatus: All
+    - stage:
+        name: windows-arm64
+        identifier: windowsarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Windows
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Fetch DevCycle Code Usages
+                  identifier: Fetch_DevCycle_Code_Usages
+                  spec:
+                    uses: DevCycleHQ/feature-flag-code-usage-action@1.0.7
+                    with:
+                      github-token: <+secrets.getValue("junepat")>
+                      client-id: oUPcvpyyux9oTber4nYQjtpccVtD1WvS
+                      client-secret: 6_eZqMce5gXTTLXy_ohSpna-Zdsyv_2ozUmSrQwDrGfNGBhmho9myDJTSjwS__3b
+                      project-key: my-first-project
+        when:
+          pipelineStatus: All
+    - stage:
+        name: macos-arm64
+        identifier: macosarm64
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: MacOS
+            arch: Arm64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Action
+                  name: Fetch DevCycle Code Usages
+                  identifier: Fetch_DevCycle_Code_Usages
+                  spec:
+                    uses: DevCycleHQ/feature-flag-code-usage-action@1.0.7
+                    with:
+                      github-token: <+secrets.getValue("junepat")>
+                      client-id: oUPcvpyyux9oTber4nYQjtpccVtD1WvS
+                      client-secret: 6_eZqMce5gXTTLXy_ohSpna-Zdsyv_2ozUmSrQwDrGfNGBhmho9myDJTSjwS__3b
+                      project-key: my-first-project
+        when:
+          pipelineStatus: All
