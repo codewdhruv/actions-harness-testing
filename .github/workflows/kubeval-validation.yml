@@ -1,0 +1,21 @@
+name: Kubeval Validation Workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-kubernetes-manifests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Validate Kubernetes Manifests
+        uses: codewdhruv/kubeval-validation@v1.0.0
+        with:
+          directory: 'files'
