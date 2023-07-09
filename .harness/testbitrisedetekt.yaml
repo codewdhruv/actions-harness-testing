@@ -31,7 +31,6 @@ pipeline:
                   name: bitrise android build
                   identifier: bitrise_android_build
                   spec:
-                    uses: github.com/bitrise-steplib/bitrise-step-android-build.git
+                    uses: github.com/bitrise-steplib/bitrise-step-android-lint.git
                     with:
-                      variant: debug
-                      build_type: apk
+                      MY_STEPLIB_REPO_FORK_GIT_URL: https://github.com/bitrise-samples/android-testing.git
