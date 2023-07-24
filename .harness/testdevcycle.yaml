@@ -31,7 +31,7 @@ pipeline:
                   name: Fetch DevCycle Code Usages
                   identifier: Fetch_DevCycle_Code_Usages
                   spec:
-                    uses: DevCycleHQ/feature-flag-code-usage-action@1.0.7
+                    uses: DevCycleHQ/feature-flag-code-usage-action@v1.0.7
                     with:
                       github-token: <+secrets.getValue("junepat")>
                       client-id: oUPcvpyyux9oTber4nYQjtpccVtD1WvS
