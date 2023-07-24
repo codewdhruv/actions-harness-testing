@@ -39,7 +39,7 @@ pipeline:
                       SECURESTACK_API_KEY: c574b6f2-5bf8-498f-b843-28815319cbf5.AtHP7PelNdtiacsuAS5D
                       SECURESTACK_APP_ID: c66e9d29-8a15-46db-93b6-b163e3e261bf
                       severity: critical
-                    envs:
+                    env:
                       BH_APP_ID: c66e9d29-8a15-46db-93b6-b163e3e261bf
     - stage:
         identifier: linuxarm64
