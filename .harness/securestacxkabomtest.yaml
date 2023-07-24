@@ -33,9 +33,9 @@ pipeline:
                   spec:
                     uses: SecureStackCo/actions-abom@v0.1.3
                     with:
-                      SECURESTACK_API_KEY: c574b6f2-5bf8-498f-b843-28815319cbf5.AtHP7PelNdtiacsuAS5D
-                      SECURESTACK_APP_ID: c66e9d29-8a15-46db-93b6-b163e3e261bf
-                      severity: critical
+                      BH_API_KEY: c574b6f2-5bf8-498f-b843-28815319cbf5.AtHP7PelNdtiacsuAS5D
+                      BH_APP_ID: c66e9d29-8a15-46db-93b6-b163e3e261bf
+                      BH_SEVERITY: critical
     - stage:
         identifier: linuxarm64
         type: CI
