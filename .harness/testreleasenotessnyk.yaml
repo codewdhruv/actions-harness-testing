@@ -149,3 +149,4 @@ pipeline:
                       GITHUB_TOKEN: <+secrets.getValue("junepat")>
         when:
           pipelineStatus: All
+  allowStageExecutions: true
